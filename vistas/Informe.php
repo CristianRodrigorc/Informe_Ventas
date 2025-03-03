@@ -11,6 +11,7 @@ $ventas = $daoVenta->obtenerVentas();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe de Ventas</title>
+    <link rel="stylesheet" href="/informe_ventas/vistas/styles.css">
 </head>
 <body>
     <h1>Informe de Ventas</h1>
