@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Técnica Funcional</title>
+    <link rel="stylesheet" href="/documentacion/Style_Documentacion_Tecnica.css">
+</head>
+<body>
+
+<header>
+    <h1>Documentación Técnica Funcional</h1>
+    <p>Proyecto: Informe de Ventas - Sistema de Gestión de Ventas</p>
+</header>
+
+<nav>
+    <a href="#introduccion">Introducción</a>
+    <a href="#requisitos">Requisitos</a>
+    <a href="#descripcion">Descripción del Sistema</a>
+    <a href="#funcionalidades">Funcionalidades</a>
+    <a href="#bd">Estructura de la Base de Datos</a>
+</nav>
+
+<section id="introduccion">
+    <h2>1. Introducción</h2>
+    <p>Esta documentación tiene como objetivo describir los aspectos técnicos del sistema de gestión de ventas, su funcionalidad y cómo interactúa con la base de datos para almacenar y procesar las ventas realizadas por las empresas.</p>
+</section>
+
+<section id="requisitos">
+    <h2>2. Requisitos</h2>
+    <p>El sistema debe cumplir con los siguientes requisitos:</p>
+    <ul>
+        <li>Debe conectarse a una base de datos MySQL para almacenar la información de ventas.</li>
+        <li>Debe ser capaz de recuperar y mostrar datos de ventas organizados.</li>
+        <li>El sistema debe ser accesible a través de un navegador web.</li>
+        <li>Debe tener un diseño limpio y organizado para mostrar la información.</li>
+    </ul>
+</section>
+
+<section id="descripcion">
+    <h2>3. Descripción del Sistema</h2>
+    <p>Este sistema está diseñado para gestionar y visualizar las ventas realizadas por diversas empresas. Utiliza PHP para el manejo del servidor y MySQL como base de datos. La página web muestra un informe de ventas, detallando el ID de la venta, la empresa, el número de factura, la fecha de la venta, el comprador, los artículos vendidos y el valor total.</p>
+</section>
+
+<section id="funcionalidades">
+    <h2>4. Funcionalidades</h2>
+    <p>Las principales funcionalidades del sistema incluyen:</p>
+    <ul>
+        <li>Conexión a la base de datos MySQL para recuperar los datos de ventas.</li>
+        <li>Visualización de un informe con la información de todas las ventas.</li>
+        <li>Uso de clases PHP para gestionar la conexión y la manipulación de datos.</li>
+        <li>Mostrar los datos de forma ordenada en una tabla HTML con un diseño atractivo.</li>
+    </ul>
+</section>
+
+<section id="bd">
+    <h2>5. Estructura de la Base de Datos</h2>
+    <p>La base de datos está compuesta por dos tablas principales: <strong>empresas</strong> y <strong>ventas</strong>. A continuación se muestra la estructura de ambas tablas:</p>
+
+    <h3>Tabla: empresas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>INT</td>
+                <td>ID único de la empresa</td>
+            </tr>
+            <tr>
+                <td>nombre</td>
+                <td>VARCHAR(255)</td>
+                <td>Nombre de la empresa</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Tabla: ventas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>INT</td>
+                <td>ID único de la venta</td>
+            </tr>
+            <tr>
+                <td>empresa_id</td>
+                <td>INT</td>
+                <td>ID de la empresa relacionada</td>
+            </tr>
+            <tr>
+                <td>numero_factura</td>
+                <td>VARCHAR(50)</td>
+                <td>El número de la factura</td>
+            </tr>
+            <tr>
+                <td>fecha_venta</td>
+                <td>DATE</td>
+                <td>Fecha en que se realizó la venta</td>
+            </tr>
+            <tr>
+                <td>comprador</td>
+                <td>VARCHAR(255)</td>
+                <td>Nombre del comprador</td>
+            </tr>
+            <tr>
+                <td>articulos_vendidos</td>
+                <td>TEXT</td>
+                <td>Listado de artículos vendidos</td>
+            </tr>
+            <tr>
+                <td>valor_total</td>
+                <td>DECIMAL(10,2)</td>
+                <td>Valor total de la venta</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>&copy; 2025 Informe de Ventas. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

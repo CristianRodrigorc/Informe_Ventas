@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Técnica - Desplegar Proyecto en Local</title>
+    <link rel="stylesheet" href="/documentacion/Style_Desplegar_Proyecto.css">
+</head>
+<body>
+
+    <header>
+        <h1>Documentación Técnica</h1>
+        <h2 id="subTitulo">Cómo desplegar el proyecto en local</h2>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Requisitos Previos</h2>
+            <p>Asegúrate de tener instalados los siguientes programas:</p>
+            <ul>
+                <li><strong>PHP</strong> (versión 7.4 o superior).</li>
+                <li><strong>MySQL</strong> (para gestionar la base de datos).</li>
+                <li><strong>Servidor web Apache</strong> (incluido en XAMPP).</li>
+                <li><strong>Editor de código</strong> (VS Code, Sublime Text, etc.).</li>
+                <li>O instalar <a href="https://www.apachefriends.org/es/index.html" target="_blank">XAMPP</a>, que incluye todo lo necesario.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Configurar el Proyecto</h2>
+            <h3>Copiar el Proyecto en XAMPP</h3>
+            <p>Coloca la carpeta <code>informe-ventas</code> dentro del directorio <code>htdocs</code> de XAMPP.</p>
+
+            <h3>Configurar la Base de Datos</h3>
+            <ol>
+                <li>Abre XAMPP y enciende **Apache** y **MySQL**.</li>
+                <li>Accede a <a href="http://localhost/phpmyadmin" target="_blank">phpMyAdmin</a>.</li>
+                <li>Crea una base de datos llamada <code>informe_ventas</code>.</li>
+                <li>Importa el archivo <code>init.sql</code> desde la carpeta del proyecto.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>3. Configurar la Conexión a la Base de Datos</h2>
+            <p>En el archivo <code>configuracion/configuracion.php</code>, asegúrate de que la configuración es correcta:</p>
+            <pre>
+$db_host = 'localhost';
+$db_name = 'informe_ventas';
+$db_user = 'root';
+$db_pass = '';
+            </pre>
+        </section>
+
+        <section>
+            <h2>4. Acceder a la Aplicación</h2>
+            <p>Abre tu navegador y escribe la siguiente URL:</p>
+            <p><strong><a href="http://localhost/informe-ventas/vistas/informe.php">http://localhost/informe-ventas/vistas/informe.php</a></strong></p>
+        </section>
+
+        <section>
+            <h2>5. Solución de Problemas</h2>
+            <table>
+                <tr>
+                    <th>Problema</th>
+                    <th>Solución</th>
+                </tr>
+                <tr>
+                    <td>No carga la página</td>
+                    <td>Revisa que Apache y MySQL estén corriendo en XAMPP.</td>
+                </tr>
+                <tr>
+                    <td>Error de conexión a la base de datos</td>
+                    <td>Verifica que el archivo <code>configuracion.php</code> tiene las credenciales correctas.</td>
+                </tr>
+                <tr>
+                    <td>Error al importar la base de datos</td>
+                    <td>Asegúrate de haber seleccionado la base de datos correcta antes de importar <code>init.sql</code>.</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Informe Ventas - Documentación Técnica</p>
+    </footer>
+
+</body>
+</html>
